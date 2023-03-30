@@ -9,11 +9,16 @@
 </head>
 <body>
     <div class="flex">
+        <h1>Trouvez le nombre secret entre 1 et 10 !</h1>
+    </div>
+    <div class="flex">
         <div>
             <p>Entrez un nombre :</p>
             <input type="number" min="1" max="10" step="1" id="guess"/>
             <button onclick="check()">Tester</button>
         </div>
+    </div>
+    <div class="flex">
         <div id="tableResult" style="display:none">
             <div id="result"></div>
             <button onclick="reset()" id="reset" style="display:none">Rejouer</button>
