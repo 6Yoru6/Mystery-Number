@@ -19,9 +19,13 @@ body {
     .flex div {
         margin: 25px;
     }
-        .flex div:nth-child(2) {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+
+#tableResult {
+    border: 2px solid black;
+    padding: 10px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

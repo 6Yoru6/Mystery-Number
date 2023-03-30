@@ -14,18 +14,26 @@ function check() {
     }
 
 	if (guess === secretNumber) { //Win message
-		resultDiv.innerHTML = `Bravo ! Vous avez gagné en ${4 - remainingTries} essai(s). Le nombre secret était ${secretNumber}.`;
+		const winMessage = document.createElement("p");
+		winMessage.textContent = `Bravo ! Vous avez gagné en ${4 - remainingTries} essai(s). Le nombre secret était ${secretNumber}.`;
+		resultDiv.appendChild(winMessage);
 		document.getElementById("reset").style.display = "block";
 		document.getElementById("guess").disabled = true;
 		document.getElementById("guess").value = "";
 	} else { //Wrong number message
 		remainingTries = remainingTries - 1;
 		if (remainingTries > 0 && guess > secretNumber) {
-			resultDiv.innerHTML = `Raté. Le nombre secret est plus petit. Il vous reste ${remainingTries} essai(s).`;
+			const wrongMessage1 = document.createElement("p");
+			wrongMessage1.textContent = `Raté. Le nombre secret est plus petit. Il vous reste ${remainingTries} essai(s).`;
+			resultDiv.appendChild(wrongMessage1);
 		} else if (remainingTries > 0 && guess < secretNumber) {
-            resultDiv.innerHTML = `Raté. Le nombre secret est plus grand. Il vous reste ${remainingTries} essai(s).`;
+            const wrongMessage2 = document.createElement("p");
+			wrongMessage2.textContent = `Raté. Le nombre secret est plus grand. Il vous reste ${remainingTries} essai(s).`;
+			resultDiv.appendChild(wrongMessage2);
             } else { //Loose message
-                resultDiv.innerHTML = `Perdu ! Il ne vous reste plus d'essais. Le nombre secret était ${secretNumber}.`;
+                const looseMessage = document.createElement("p");
+			    looseMessage.textContent = `Perdu ! Il ne vous reste plus d'essais. Le nombre secret était ${secretNumber}.`;
+			    resultDiv.appendChild(looseMessage);
                 document.getElementById("reset").style.display = "block";
                 document.getElementById("guess").disabled = true;
                 document.getElementById("guess").value = "";
