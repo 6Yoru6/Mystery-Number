@@ -16,7 +16,9 @@ function check() {
 	if (guess === secretNumber) { //Win message
 		const winMessage = document.createElement("p");
 		winMessage.textContent = `Bravo ! Vous avez gagné en ${4 - remainingTries} essai(s). Le nombre secret était ${secretNumber}.`;
-		resultDiv.appendChild(winMessage);
+		winMessage.style.fontWeight = "bold"
+        resultDiv.appendChild(winMessage);
+        document.getElementById("tableResult").style.display = "block";
 		document.getElementById("reset").style.display = "block";
 		document.getElementById("guess").disabled = true;
 		document.getElementById("guess").value = "";
@@ -26,14 +28,18 @@ function check() {
 			const wrongMessage1 = document.createElement("p");
 			wrongMessage1.textContent = `Raté. Le nombre secret est plus petit. Il vous reste ${remainingTries} essai(s).`;
 			resultDiv.appendChild(wrongMessage1);
+            document.getElementById("tableResult").style.display = "block";
 		} else if (remainingTries > 0 && guess < secretNumber) {
             const wrongMessage2 = document.createElement("p");
 			wrongMessage2.textContent = `Raté. Le nombre secret est plus grand. Il vous reste ${remainingTries} essai(s).`;
 			resultDiv.appendChild(wrongMessage2);
+            document.getElementById("tableResult").style.display = "block";
             } else { //Loose message
                 const looseMessage = document.createElement("p");
 			    looseMessage.textContent = `Perdu ! Il ne vous reste plus d'essais. Le nombre secret était ${secretNumber}.`;
+                looseMessage.style.fontWeight = "bold"
 			    resultDiv.appendChild(looseMessage);
+                document.getElementById("tableResult").style.display = "block";
                 document.getElementById("reset").style.display = "block";
                 document.getElementById("guess").disabled = true;
                 document.getElementById("guess").value = "";
@@ -45,6 +51,7 @@ function check() {
 function reset() {
 	secretNumber = Math.floor(Math.random() * 10) + 1;
 	remainingTries = 3;
+    document.getElementById("tableResult").style.display = "none";
 	document.getElementById("result").innerHTML = "";
 	document.getElementById("reset").style.display = "none";
 	document.getElementById("guess").disabled = false;
