@@ -11,6 +11,16 @@ button {
     padding: 2px;
 }
 
+body .flex:nth-child(2) div input {
+    width: 100px;
+    height: 20px;
+}
+body .flex:nth-child(2) div button {
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: white;
+}
+
 /*Center elements of divs*/
 .flex {
     height: 20%;
@@ -25,7 +35,7 @@ button {
 #tableResult {
     padding: 25px;
     border: 1px solid black;
-    border-radius: 2%;
+    border-radius: 10px;
     
     display: flex;
     flex-direction: column;

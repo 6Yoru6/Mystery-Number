@@ -26,17 +26,17 @@ function check() {
 		remainingTries = remainingTries - 1;
 		if (remainingTries > 0 && guess > secretNumber) {
 			const wrongMessage1 = document.createElement("p");
-			wrongMessage1.textContent = `${guess} ? Raté. Le nombre secret est plus petit. Il vous reste ${remainingTries} essai(s).`;
+			wrongMessage1.textContent = `${guess} ? Raté. Le numéro secret est plus petit. Il vous reste ${remainingTries} essai(s).`;
 			resultDiv.appendChild(wrongMessage1);
             document.getElementById("tableResult").style.display = "flex";
 		} else if (remainingTries > 0 && guess < secretNumber) {
             const wrongMessage2 = document.createElement("p");
-			wrongMessage2.textContent = `${guess} ? Raté. Le nombre secret est plus grand. Il vous reste ${remainingTries} essai(s).`;
+			wrongMessage2.textContent = `${guess} ? Raté. Le numéro secret est plus grand. Il vous reste ${remainingTries} essai(s).`;
 			resultDiv.appendChild(wrongMessage2);
             document.getElementById("tableResult").style.display = "flex";
             } else { //Loose message
                 const looseMessage = document.createElement("p");
-			    looseMessage.textContent = `${guess} ? Perdu ! Le nombre secret était ${secretNumber}.`;
+			    looseMessage.textContent = `${guess} ? Perdu ! Le numéro secret était ${secretNumber}.`;
                 looseMessage.style.fontWeight = "bold"
 			    resultDiv.appendChild(looseMessage);
                 document.getElementById("tableResult").style.display = "flex";
