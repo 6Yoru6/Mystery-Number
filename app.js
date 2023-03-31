@@ -1,6 +1,7 @@
 //Site choose a secret number to guess
 let secretNumber = Math.floor(Math.random() * 10) + 1;
 let remainingTries = 3;
+let maxNumber = 10;
 
 function check() {
 	const guessInput = document.getElementById("guess");
@@ -8,8 +9,8 @@ function check() {
 	const guess = parseInt(guessInput.value);
 
     //Error message if user choose unvalid number
-	if (isNaN(guess) || guess < 1 || guess > 10 || /^\d*\.\d+$/.test(guess)) {
-        alert("Veuillez saisir un nombre valide entre 1 et 10.");
+	if (isNaN(guess) || guess < 1 || guess > maxNumber || /^\d*\.\d+$/.test(guess)) {
+        alert(`Veuillez saisir un nombre valide entre 1 et ${maxNumber}.`);
         return;
     }
 
@@ -47,12 +48,33 @@ function check() {
 	}
 }
 
-//Button reset for restart the game
+//Button reset to restart the game
 function reset() {
-	secretNumber = Math.floor(Math.random() * 10) + 1;
+	secretNumber = Math.floor(Math.random() * maxNumber) + 1;
 	remainingTries = 3;
     document.getElementById("tableResult").style.display = "none";
 	document.getElementById("result").innerHTML = "";
 	document.getElementById("reset").style.display = "none";
 	document.getElementById("guess").disabled = false;
+    document.getElementById("guess").value = "";
 }
+
+//Change difficulty and rules
+	//Button easy 
+	document.getElementById("easyButton").addEventListener("click", function() {
+		maxNumber = 10;
+		reset();
+		document.getElementById("difficultyh1").textContent = "Trouvez le numéro secret entre 1 et 10 !";
+	});
+	//Button medium 
+	document.getElementById("mediumButton").addEventListener("click", function() {
+		maxNumber = 50;
+		reset();
+		document.getElementById("difficultyh1").textContent = "Trouvez le numéro secret entre 1 et 50 !";
+	});
+	//Button hard 
+	document.getElementById("hardButton").addEventListener("click", function() {
+		maxNumber = 100;
+		reset();
+		document.getElementById("difficultyh1").textContent = "Trouvez le numéro secret entre 1 et 100 !";
+	});

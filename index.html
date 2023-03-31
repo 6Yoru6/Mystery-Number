@@ -9,12 +9,15 @@
 </head>
 <body>
     <div class="flex">
-        <h1>Trouvez le numéro secret entre 1 et 10 !</h1>
+        <button onclick="setDifficulty('easy')" id="easyButton">Easy</button>
+        <button onclick="setDifficulty('medium')" id="mediumButton">Medium</button>
+        <button onclick="setDifficulty('hard')" id="hardButton">Hard</button>
+        <h1 id="difficultyh1">Trouvez le numéro secret entre 1 et 10 !</h1>
     </div>
     <div class="flex">
         <div>
             <p>Entrez un nombre :</p>
-            <input type="number" min="1" max="10" step="1" id="guess"/>
+            <input type="number" min="1" max="100" step="1" id="guess"/>
             <button onclick="check()">Tester</button>
         </div>
     </div>
