@@ -37,29 +37,33 @@ body .flex:nth-child(2) div button {
 
 /*Center elements of divs*/
 .flex {
-    height: 20%;
+    height: 200px;
 
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
+    /*First div*/
     .fdiv {
         flex-direction: column;
     }
         .fdiv button {
             margin: 2px;
+            margin-top: 10px;
             width: 75px;
             height: 40px;
             border: 0px solid black;
             border-radius: 10px;
         }
         .fdiv #difficultyh1 {
-            margin-top: 20px;
+            margin-top: 25px;
+            text-align: center;
         }
 
 /*The table of the results*/
 #tableResult {
+    margin: 10px;
     padding: 25px;
     border: 1px solid black;
     border-radius: 10px;
